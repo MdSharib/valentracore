@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   description: "A world-class, cinematic digital product experience for a medical-tech brand.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

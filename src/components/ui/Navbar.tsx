@@ -72,47 +72,49 @@ export default function Navbar() {
         </div>
       </header>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-2xl flex flex-col pt-24 px-8 pb-6"
-          >
-            <button 
-              className="absolute top-6 right-8 text-foreground p-2"
-              onClick={() => setIsOpen(false)}
+      <div className="md:hidden">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: "-100%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "-100%" }}
+              transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-2xl flex flex-col pt-24 px-8 pb-6"
             >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="flex flex-col gap-6 text-2xl font-satoshi font-medium mt-12">
-              <a href="#platform" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Platform</a>
-              <a href="#solutions" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Solutions</a>
-              <a href="#how-it-works" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">How it works</a>
-              <a href="#pricing" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Pricing</a>
-            </div>
-            <div className="mt-8 flex items-center justify-center">
-              <ThemeToggle />
-            </div>
-            <div className="mt-auto flex flex-col gap-4">
-              <button className="w-full text-center text-[20px] font-medium py-4 text-white bg-transparent border border-surface-border rounded-2xl hover:border-white/50 transition-all active:scale-[0.98]">
-                Log in
+              <button 
+                className="absolute top-6 right-8 text-foreground p-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <X className="w-6 h-6" />
               </button>
-              <a href="#contact" onClick={() => setIsOpen(false)} className="relative group w-full flex items-center justify-center text-[20px] font-semibold py-4 rounded-2xl active:scale-[0.98] transition-all">
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl blur-[12px] opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl" />
-                <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/30 to-transparent rounded-t-2xl pointer-events-none" />
-                <div className="absolute inset-0 border border-white/40 rounded-2xl pointer-events-none" />
-                <span className="relative z-10 flex items-center gap-2 text-background tracking-wide drop-shadow-[0_1px_1px_rgba(255,255,255,0.4)]">
-                  Book Demo <ArrowUpRight className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-                </span>
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <div className="flex flex-col gap-6 text-2xl font-satoshi font-medium mt-12">
+                <a href="#platform" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Platform</a>
+                <a href="#solutions" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Solutions</a>
+                <a href="#how-it-works" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">How it works</a>
+                <a href="#pricing" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Pricing</a>
+              </div>
+              <div className="mt-8 flex items-center justify-center">
+                <ThemeToggle />
+              </div>
+              <div className="mt-auto flex flex-col gap-4">
+                <button className="w-full text-center text-[20px] font-medium py-4 text-white bg-transparent border border-surface-border rounded-2xl hover:border-white/50 transition-all active:scale-[0.98]">
+                  Log in
+                </button>
+                <a href="#contact" onClick={() => setIsOpen(false)} className="relative group w-full flex items-center justify-center text-[20px] font-semibold py-4 rounded-2xl active:scale-[0.98] transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl blur-[12px] opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl" />
+                  <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/30 to-transparent rounded-t-2xl pointer-events-none" />
+                  <div className="absolute inset-0 border border-white/40 rounded-2xl pointer-events-none" />
+                  <span className="relative z-10 flex items-center gap-2 text-background tracking-wide drop-shadow-[0_1px_1px_rgba(255,255,255,0.4)]">
+                    Book Demo <ArrowUpRight className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </>
   );
 }

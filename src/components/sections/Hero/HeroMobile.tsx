@@ -5,7 +5,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 export default function HeroMobile() {
   return (
-    <section className="relative min-h-screen w-full bg-background overflow-hidden flex flex-col items-center justify-center pt-24 pb-16">
+    <section className="relative min-h-screen w-full bg-gradient-to-b from-[#545D63] to-[#ACAEB8] overflow-hidden flex flex-col items-center justify-center pt-24 pb-16">
       {/* Cinematic Glow Backing */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_70%)] opacity-100 z-0" />
       

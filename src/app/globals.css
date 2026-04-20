@@ -35,6 +35,10 @@
     --accent-cyan: #22D3EE;
   }
   
+  html {
+    font-size: 85%; /* Globally scales down all rem units (Tailwind classes) to fix the zoomed-in look */
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);

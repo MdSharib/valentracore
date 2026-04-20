@@ -99,18 +99,21 @@ export default function HeroDesktop() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen min-h-screen w-full bg-background overflow-hidden flex flex-col items-center justify-center">
+    <section ref={sectionRef} className="relative h-screen min-h-screen w-full bg-gradient-to-b from-[#5D656C] to-[#C0BFC8] overflow-hidden flex flex-col items-center justify-center">
       {/* Cinematic Glow Backing */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] opacity-70 z-0" />
       
       {/* 3D Sequence Canvas */}
-      <div ref={containerRef} className="absolute inset-0 z-10 flex items-center justify-center">
+      <div ref={containerRef} className="absolute inset-0 z-10 flex items-center justify-center overflow-hidden">
         <canvas
           ref={canvasRef}
           width={1920}
           height={1080}
-          className="w-full h-full max-w-full max-h-full object-cover"
+          className="w-[150%] sm:w-[120%] md:w-full h-auto md:h-full max-w-none md:max-w-full object-contain md:object-cover"
         />
+        {/* Mobile Edge Fade Gradients to blend the letterbox effect smoothly */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#5D656C] via-[#5D656C]/80 to-transparent md:hidden pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#C0BFC8] via-[#C0BFC8]/80 to-transparent md:hidden pointer-events-none" />
       </div>
 
       <div className="hero-overlay opacity-0 absolute inset-0 bg-black/70 z-20 pointer-events-none" />
@@ -143,11 +146,11 @@ export default function HeroDesktop() {
             animation: border-sweep 3s linear infinite;
           }
         `}</style>
-        <h1 className="hero-content-item opacity-0 font-display text-[6rem] font-semibold tracking-tight text-white max-w-[100rem] leading-[1.05] mb-8">
+        <h1 className="hero-content-item opacity-0 font-display text-5xl sm:text-6xl md:text-[6rem] font-semibold tracking-tight text-white max-w-[100rem] leading-[1.05] mb-8">
           The <span className="text-transparent bg-clip-text bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-500 animate-gradient-xy drop-shadow-[0_0_40px_rgba(217,70,239,0.5)]">AI Operating System</span> Powering <br className="hidden md:block"/> the Next Generation of Clinics
         </h1>
 
-        <p className="hero-content-item opacity-0 text-[1.5rem] font-medium max-w-[55rem] mb-10 text-white/90">
+        <p className="hero-content-item opacity-0 text-lg md:text-[1.5rem] font-medium max-w-[55rem] mb-10 text-white/90">
           Automate appointments, eliminate missed calls, and grow your clinic with AI systems designed to run your front desk and operations seamlessly.
         </p>
 
@@ -159,7 +162,7 @@ export default function HeroDesktop() {
 
             <a 
               href="#contact"
-              className="relative flex items-center justify-center px-12 py-[30px] text-[24px] leading-none text-white rounded-full overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
+              className="relative flex items-center justify-center px-8 py-5 md:px-12 md:py-[30px] text-[18px] md:text-[24px] leading-none text-white rounded-full overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
               
               {/* Sweeping left-to-right border beam */}
               <div 
