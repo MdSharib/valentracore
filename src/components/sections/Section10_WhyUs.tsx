@@ -55,14 +55,14 @@ export default function Section10_WhyUs() {
             {/* Header Row */}
             <div className="grid grid-cols-3 bg-surface-highlight border-b border-surface-border">
               <div className="p-6 flex items-end">
-                <span className="font-semibold text-primary">Capabilities</span>
+                <span className="text-xl font-semibold text-primary">Capabilities</span>
               </div>
               <div className="p-6 flex items-center justify-center border-l border-surface-border bg-background/30">
-                <span className="text-sm font-medium text-primary-dim">Generic Agencies</span>
+                <span className="text-lg font-medium text-primary-dim">Generic Agencies</span>
               </div>
               <div className="p-6 flex items-center justify-center border-l border-surface-border bg-accent-teal/5 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-accent-teal" />
-                <span className="text-lg font-semibold text-accent-teal">Our System</span>
+                <span className="text-2xl font-semibold text-accent-teal">Our System</span>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ export default function Section10_WhyUs() {
                   )}
                 >
                   <div className="p-6 flex items-center">
-                    <span className="text-sm font-medium text-primary">{feature}</span>
+                    <span className="text-base md:text-lg font-medium text-primary">{feature}</span>
                   </div>
                   <div className="p-6 flex items-center justify-center border-l border-surface-border">
                     <X className="w-5 h-5 text-red-500/50" />

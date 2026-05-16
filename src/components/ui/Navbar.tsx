@@ -41,9 +41,9 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-4 mt-0.5">
             <ThemeToggle className="text-white border-white/20 hover:bg-white/10" />
-            <button className="text-[20px] leading-none font-medium text-white px-6 py-2.5 rounded-full border border-white/20 bg-transparent hover:border-white/50 transition-all duration-300 active:scale-95 flex items-center justify-center">
-              Log in
-            </button>
+            <a href="https://wa.me/917011359312" target="_blank" rel="noopener noreferrer" className="text-[20px] leading-none font-medium text-[#25D366] px-6 py-2.5 rounded-full border border-[#25D366] bg-transparent hover:bg-[#25D366]/10 transition-all duration-300 active:scale-95 flex items-center justify-center">
+              Connect on WhatsApp
+            </a>
             <a href="#contact" className="relative group flex items-center justify-center px-8 py-3 text-[18px] font-semibold text-background rounded-full transition-all duration-500 active:scale-95">
               {/* Animated outer blur glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-full blur-[12px] opacity-40 group-hover:opacity-80 group-hover:blur-[18px] transition-all duration-500" />
@@ -98,9 +98,9 @@ export default function Navbar() {
                 <ThemeToggle />
               </div>
               <div className="mt-auto flex flex-col gap-4">
-                <button className="w-full text-center text-[20px] font-medium py-4 text-foreground bg-transparent border border-surface-border rounded-2xl hover:bg-surface-highlight transition-all active:scale-[0.98]">
-                  Log in
-                </button>
+                <a href="https://wa.me/917011359312" target="_blank" rel="noopener noreferrer" className="w-full text-center text-[20px] font-medium py-4 text-[#25D366] bg-transparent border border-[#25D366] rounded-2xl hover:bg-[#25D366]/10 transition-all active:scale-[0.98] flex items-center justify-center">
+                  Connect on WhatsApp
+                </a>
                 <a href="#contact" onClick={() => setIsOpen(false)} className="relative group w-full flex items-center justify-center text-[20px] font-semibold py-4 rounded-2xl active:scale-[0.98] transition-all">
                   <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl blur-[12px] opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-2xl" />

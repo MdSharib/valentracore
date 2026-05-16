@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, X } from "lucide-react";
 
-export default function Section14_CTA() {
+interface DemoModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export function DemoModal({ isOpen, onClose }: DemoModalProps) {
+  const [mounted, setMounted] = useState(false);
+  
   const [formData, setFormData] = useState({
     clinicName: "",
     specialty: "",
@@ -18,51 +26,52 @@ export default function Section14_CTA() {
     const message = `Hi, I'd like to book a private demo!\n\n*Clinic Name:* ${formData.clinicName}\n*Specialty:* ${formData.specialty}\n*Phone:* ${formData.phone}\n*City:* ${formData.city}\n*Challenge:* ${formData.challenge}`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/917011359312?text=${encodedMessage}`, "_blank");
+    onClose();
   };
-  return (
-    <section className="py-32 w-full bg-background relative z-20 overflow-hidden" id="contact">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(20,184,166,0.08),transparent_50%)] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-16 items-center">
-        
-        {/* Copy Side */}
-        <div className="w-full lg:w-1/2">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8 text-foreground leading-[1.1]">
-              Let&apos;s build the system your clinic should have had from day one.
-            </h2>
-            <p className="text-xl text-primary-dim font-light leading-relaxed mb-12 max-w-lg">
-              Book a discovery call to see the exact workflow we would deploy for your specific medical specialty.
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-surface-border hover:border-accent-teal hover:bg-accent-teal/5 text-foreground rounded-2xl transition-all font-medium">
-                <MessageCircle className="w-5 h-5 text-green-500" />
-                Contact via WhatsApp
-              </button>
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || typeof document === 'undefined') return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          key="demo-modal"
+          className="fixed inset-0 z-[100] flex items-center justify-center px-4 font-satoshi"
+        >
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-background/80 backdrop-blur-md"
+          />
+
+          {/* Modal Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative w-full max-w-2xl bg-surface border border-surface-border rounded-[2rem] p-6 md:p-10 shadow-2xl overflow-hidden"
+          >
+            <button 
+              onClick={onClose}
+              className="absolute top-6 right-6 p-2 rounded-full bg-surface-highlight text-primary-dim hover:text-foreground transition-colors z-20"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="mb-8 pr-12 relative z-10">
+              <h2 className="text-3xl font-display font-semibold text-foreground mb-2">Book your Demo</h2>
+              <p className="text-primary-dim">Tell us about your clinic so we can tailor your workflow.</p>
             </div>
-          </motion.div>
-        </div>
 
-        {/* Form Side */}
-        <div className="w-full lg:w-1/2">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="bg-surface border border-surface-border p-8 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden group"
-          >
-            {/* Subtle reactive glow behind the form */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            
-            <form className="relative z-10 flex flex-col gap-6" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form className="relative z-10 flex flex-col gap-5" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-primary">Clinic Name</label>
                   <input required type="text" value={formData.clinicName} onChange={(e) => setFormData({...formData, clinicName: e.target.value})} className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal/50 transition-all" placeholder="Apex Medical" />
@@ -80,7 +89,7 @@ export default function Section14_CTA() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-primary">WhatsApp Number</label>
                   <input required type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal/50 transition-all" placeholder="+91 00000 00000" />
@@ -96,14 +105,14 @@ export default function Section14_CTA() {
                 <textarea required rows={3} value={formData.challenge} onChange={(e) => setFormData({...formData, challenge: e.target.value})} className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal/50 transition-all resize-none" placeholder="Missed calls, low website conversions, no online booking..." />
               </div>
 
-              <button type="submit" className="mt-2 w-full flex items-center justify-center gap-2 bg-accent-teal hover:bg-accent-teal/90 text-background font-semibold py-4 rounded-xl transition-all active:scale-[0.98]">
+              <button type="submit" className="mt-4 w-full flex items-center justify-center gap-2 bg-accent-teal hover:bg-accent-teal/90 text-background font-semibold py-4 rounded-xl transition-all active:scale-[0.98]">
                 Request Private Demo <ArrowRight className="w-4 h-4" />
               </button>
             </form>
           </motion.div>
-        </div>
-
-      </div>
-    </section>
+        </motion.div>
+      )}
+    </AnimatePresence>,
+    document.body
   );
 }

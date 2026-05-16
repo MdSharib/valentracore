@@ -21,9 +21,7 @@ const featuresData: Record<string, { title: string, subtitle: string, image: str
     image: "/api/image?file=C:/Users/md. Sharib/.gemini/antigravity/brain/c52269ba-cbca-468e-9b3e-38cd28ef5e9a/happy_patients_acquisition_1775755694700.png",
     items: [
       "High-conversion clinic website architecture",
-      "Dedicated landing pages for high-ticket treatments",
       "Frictionless lead capture forms",
-      "Dynamic trust-building layouts",
       "Local SEO conversion optimization"
     ]
   },
@@ -34,9 +32,7 @@ const featuresData: Record<string, { title: string, subtitle: string, image: str
     items: [
       "Deep WhatsApp CTA integration",
       "Native online appointment booking engine",
-      "AI receptionist for after-hours calls",
-      "Immediate missed-call capture via SMS/WhatsApp",
-      "Automated appointment reminders and intelligent confirmations"
+      "AI receptionist for after-hours calls"
     ]
   },
   operations: {
@@ -46,9 +42,7 @@ const featuresData: Record<string, { title: string, subtitle: string, image: str
     items: [
       "Unified doctor & staff dashboard view",
       "Live appointment health overview",
-      "Centralized multi-channel inquiry management",
-      "Automated lead status tracking",
-      "One-click follow-up scheduling"
+      "Automated lead status tracking"
     ]
   },
   growth: {
@@ -58,9 +52,7 @@ const featuresData: Record<string, { title: string, subtitle: string, image: str
     items: [
       "Automated Google review request systems",
       "Smart recall and reactivation flows",
-      "Repeat patient nurturing campaigns",
-      "Granular campaign conversion analytics",
-      "Macro performance insights & reporting"
+      "Granular campaign conversion analytics"
     ]
   }
 };
@@ -162,7 +154,7 @@ export default function Section5_SolutionStack() {
           </div>
 
           {/* Content Panel */}
-          <div className="w-full lg:w-2/3 relative min-h-[450px] md:min-h-[400px]">
+          <div className="w-full lg:w-2/3 relative min-h-[380px] md:min-h-[340px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -186,7 +178,7 @@ export default function Section5_SolutionStack() {
                         <div className="w-6 h-6 rounded-full bg-accent-teal/10 flex items-center justify-center shrink-0">
                           <CheckCircle2 className="w-4 h-4 text-accent-teal" />
                         </div>
-                        <span className="text-primary font-medium text-sm md:text-base">{item}</span>
+                        <span className="text-primary font-medium text-base md:text-lg">{item}</span>
                       </div>
                     ))}
                   </div>
