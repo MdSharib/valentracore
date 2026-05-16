@@ -36,7 +36,7 @@
   }
   
   html {
-    font-size: 85%; /* Globally scales down all rem units (Tailwind classes) to fix the zoomed-in look */
+    font-size: 75%; /* Globally scales down all rem units (Tailwind classes) to fix the zoomed-in look */
   }
 
   body {
