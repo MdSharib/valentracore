@@ -71,17 +71,6 @@ export default function Section9_Outcomes() {
             </motion.div>
           ))}
         </div>
-
-        <div className="flex justify-center mt-16 px-6">
-          <motion.button 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="px-8 py-4 rounded-full bg-surface-highlight border border-surface-border text-foreground text-sm font-medium hover:bg-surface-border transition-colors flex items-center gap-2"
-          >
-            Read our Case Studies <ArrowUpRight className="w-4 h-4" />
-          </motion.button>
-        </div>
       </div>
     </section>
   );

@@ -4,7 +4,6 @@ import Scene2_Friction from "@/components/sections/Scene2_Friction";
 import Scene3_SystemReveal from "@/components/sections/Scene3_SystemReveal";
 import Scene4_FeatureWorlds from "@/components/sections/Scene4_FeatureWorlds";
 import Scene5_Trust from "@/components/sections/Scene5_Trust";
-import Scene6_Pricing from "@/components/sections/Scene6_Pricing";
 import Section3_TrustBar from "@/components/sections/Section3_TrustBar";
 import Section4_PainPoints from "@/components/sections/Section4_PainPoints";
 import Section_WhatWeOffer from "@/components/sections/Section_WhatWeOffer";
@@ -38,7 +37,6 @@ export default function Home() {
       <Section11_SocialProof />
       {/* <Section12_Process /> */}
       <Section13_FAQ />
-      <Scene6_Pricing />
       <Section14_CTA />
       <Footer />
     </main>

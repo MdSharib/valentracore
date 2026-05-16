@@ -40,7 +40,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4 mt-0.5">
-            <ThemeToggle />
+            <ThemeToggle className="text-white border-white/20 hover:bg-white/10" />
             <button className="text-[20px] leading-none font-medium text-white px-6 py-2.5 rounded-full border border-white/20 bg-transparent hover:border-white/50 transition-all duration-300 active:scale-95 flex items-center justify-center">
               Log in
             </button>
@@ -89,16 +89,16 @@ export default function Navbar() {
                 <X className="w-6 h-6" />
               </button>
               <div className="flex flex-col gap-6 text-2xl font-satoshi font-medium mt-12">
-                <a href="#platform" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Platform</a>
-                <a href="#solutions" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Solutions</a>
-                <a href="#how-it-works" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">How it works</a>
-                <a href="#pricing" onClick={() => setIsOpen(false)} className="w-fit text-white hover:text-white/70 transition-all">Pricing</a>
+                <a href="#platform" onClick={() => setIsOpen(false)} className="w-fit text-foreground hover:text-primary-dim transition-all">Platform</a>
+                <a href="#solutions" onClick={() => setIsOpen(false)} className="w-fit text-foreground hover:text-primary-dim transition-all">Solutions</a>
+                <a href="#how-it-works" onClick={() => setIsOpen(false)} className="w-fit text-foreground hover:text-primary-dim transition-all">How it works</a>
+                <a href="#pricing" onClick={() => setIsOpen(false)} className="w-fit text-foreground hover:text-primary-dim transition-all">Pricing</a>
               </div>
               <div className="mt-8 flex items-center justify-center">
                 <ThemeToggle />
               </div>
               <div className="mt-auto flex flex-col gap-4">
-                <button className="w-full text-center text-[20px] font-medium py-4 text-white bg-transparent border border-surface-border rounded-2xl hover:border-white/50 transition-all active:scale-[0.98]">
+                <button className="w-full text-center text-[20px] font-medium py-4 text-foreground bg-transparent border border-surface-border rounded-2xl hover:bg-surface-highlight transition-all active:scale-[0.98]">
                   Log in
                 </button>
                 <a href="#contact" onClick={() => setIsOpen(false)} className="relative group w-full flex items-center justify-center text-[20px] font-semibold py-4 rounded-2xl active:scale-[0.98] transition-all">

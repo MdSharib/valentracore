@@ -38,7 +38,7 @@ const specialties = [
 
 export default function Section8_Specialties() {
   return (
-    <section className="py-32 w-full bg-background relative z-20">
+    <section className="py-32 w-full bg-background dark:bg-[#030303] relative z-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center w-full px-6 max-w-[90rem] mx-auto mb-16 md:mb-24">
           <motion.div

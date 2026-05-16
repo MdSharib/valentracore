@@ -32,7 +32,7 @@ export default function Section13_FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 w-full bg-surface border-y border-surface-border relative z-20">
+    <section className="py-32 w-full bg-surface dark:bg-[#030303] border-y border-surface-border relative z-20">
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex flex-col items-center text-center w-full px-6 max-w-[90rem] mx-auto mb-16 md:mb-24">
           <motion.div

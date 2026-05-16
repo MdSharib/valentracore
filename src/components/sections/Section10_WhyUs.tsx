@@ -16,7 +16,7 @@ const comparisonFeatures = [
 
 export default function Section10_WhyUs() {
   return (
-    <section className="py-32 w-full bg-background relative z-20">
+    <section className="py-32 w-full bg-background dark:bg-[#030303] relative z-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center w-full px-6 max-w-[90rem] mx-auto mb-16 md:mb-24">
           <motion.div
@@ -26,7 +26,7 @@ export default function Section10_WhyUs() {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-border/50 backdrop-blur-md border border-white/10 text-foreground mb-4 md:mb-6 font-semibold text-xs md:text-sm tracking-[0.2em] uppercase shadow-2xl"
           >
             <Sparkles className="w-4 h-4 text-accent-cyan" />
-            <span>The Antigravity Advantage</span>
+            <span>The ValentraCore Advantage</span>
           </motion.div>
           
           <motion.h2 
