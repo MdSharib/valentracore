@@ -154,7 +154,7 @@ export default function Section5_SolutionStack() {
           </div>
 
           {/* Content Panel */}
-          <div className="w-full lg:w-2/3 relative min-h-[380px] md:min-h-[340px]">
+          <div className="w-full lg:w-2/3 relative min-h-[380px] md:min-h-[340px] lg:-mt-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

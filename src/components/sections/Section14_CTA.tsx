@@ -41,10 +41,10 @@ export default function Section14_CTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-surface-border hover:border-accent-teal hover:bg-accent-teal/5 text-foreground rounded-2xl transition-all font-medium">
+              <a href="https://wa.me/917011359312" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-surface-border hover:border-accent-teal hover:bg-accent-teal/5 text-foreground rounded-2xl transition-all font-medium">
                 <MessageCircle className="w-5 h-5 text-green-500" />
                 Contact via WhatsApp
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
