@@ -143,11 +143,11 @@ export default function HeroDesktop() {
             animation: border-sweep 3s linear infinite;
           }
         `}</style>
-        <h1 className="hero-content-item opacity-0 font-display text-5xl sm:text-6xl md:text-[6rem] font-semibold tracking-tight text-white max-w-[100rem] leading-[1.05] mb-8">
+        <h1 className="hero-content-item opacity-0 font-display text-5xl sm:text-6xl lg:text-[5rem] xl:text-[6rem] font-semibold tracking-tight text-white max-w-[100rem] leading-[1.05] mb-8">
           The <span className="text-transparent bg-clip-text bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-500 animate-gradient-xy drop-shadow-[0_0_40px_rgba(217,70,239,0.5)]">AI Operating System</span> Powering <br className="hidden md:block"/> the Next Generation of Clinics
         </h1>
 
-        <p className="hero-content-item opacity-0 text-lg md:text-[1.5rem] font-medium max-w-[55rem] mb-10 text-white/90">
+        <p className="hero-content-item opacity-0 text-lg md:text-xl lg:text-[1.5rem] font-medium max-w-[55rem] mb-10 text-white/90">
           Automate appointments, eliminate missed calls, and grow your clinic with AI systems designed to run your front desk and operations seamlessly.
         </p>
 
@@ -159,7 +159,7 @@ export default function HeroDesktop() {
 
             <a 
               href="#contact"
-              className="relative flex items-center justify-center px-8 py-5 md:px-12 md:py-[30px] text-[18px] md:text-[24px] leading-none text-white rounded-full overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
+              className="relative flex items-center justify-center px-8 py-5 lg:px-10 lg:py-6 xl:px-12 xl:py-[30px] text-[18px] lg:text-[20px] xl:text-[24px] leading-none text-white rounded-full overflow-hidden transition-all duration-300 group-hover:scale-[1.02]">
               
               {/* Sweeping left-to-right border beam */}
               <div 

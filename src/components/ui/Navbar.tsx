@@ -25,14 +25,14 @@ export default function Navbar() {
         )}
       >
         <div className="w-full max-w-[120rem] mx-auto flex items-center justify-between gap-4 px-8 py-6">
-          <div className="flex items-center gap-4 group cursor-pointer">
+          <div className="flex items-center gap-2 sm:gap-4 group cursor-pointer">
             {/* VC Masterpiece Logo Icon */}
-            <div className="relative w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-surface-highlight to-background border border-surface-border backdrop-blur-xl shadow-[0_8px_32px_-12px_rgba(6,182,212,0.4)] overflow-hidden shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-surface-highlight to-background border border-surface-border backdrop-blur-xl shadow-[0_8px_32px_-12px_rgba(6,182,212,0.4)] overflow-hidden shrink-0">
               <div className="absolute inset-0 bg-gradient-to-br from-accent-teal/20 via-transparent to-accent-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute -inset-[100%] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_50%,#14b8a6_100%)] opacity-20 group-hover:animate-[spin_4s_linear_infinite]" />
-              <div className="absolute inset-[1px] bg-background/90 rounded-2xl backdrop-blur-2xl" />
+              <div className="absolute inset-[1px] bg-background/90 rounded-xl sm:rounded-2xl backdrop-blur-2xl" />
 
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 w-8 h-8 group-hover:scale-110 transition-transform duration-700 ease-out">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 w-6 h-6 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform duration-700 ease-out">
                 <defs>
                   {/* Fluid Tech Gradient */}
                   <linearGradient id="vc-fluid" x1="18" y1="25" x2="83" y2="75" gradientUnits="userSpaceOnUse">
@@ -82,24 +82,24 @@ export default function Navbar() {
             {/* Masterpiece Typography */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center tracking-[0.2em] leading-none uppercase">
-                <span className="font-satoshi text-[24px] font-light text-white drop-shadow-sm">
+                <span className="font-satoshi text-[16px] sm:text-[20px] md:text-[24px] font-light text-white drop-shadow-sm">
                   Valentra
                 </span>
-                <span className="font-satoshi text-[24px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-accent-teal via-accent-cyan to-white drop-shadow-md ml-1">
+                <span className="font-satoshi text-[16px] sm:text-[20px] md:text-[24px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-accent-teal via-accent-cyan to-white drop-shadow-md ml-1">
                   Core
                 </span>
               </div>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-[20px] leading-none font-medium mt-0.5">
+          <nav className="hidden xl:flex items-center gap-8 text-[20px] leading-none font-medium mt-0.5">
             <a href="#platform" className="text-white hover:text-white/70 transition-all duration-300">Platform</a>
             <a href="#solutions" className="text-white hover:text-white/70 transition-all duration-300">Solutions</a>
             <a href="#how-it-works" className="text-white hover:text-white/70 transition-all duration-300">How it works</a>
             <a href="#pricing" className="text-white hover:text-white/70 transition-all duration-300">Pricing</a>
           </nav>
 
-          <div className="hidden md:flex items-center gap-4 mt-0.5">
+          <div className="hidden xl:flex items-center gap-4 mt-0.5">
             <ThemeToggle className="text-white border-white/20 hover:bg-white/10" />
             <a href="https://wa.me/917011359312" target="_blank" rel="noopener noreferrer" className="text-[20px] leading-none font-medium text-[#25D366] px-6 py-2.5 rounded-full border border-[#25D366] bg-transparent hover:bg-[#25D366]/10 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
@@ -127,7 +127,7 @@ export default function Navbar() {
           </div>
 
           <button 
-            className="md:hidden text-white p-2"
+            className="xl:hidden text-white p-2"
             onClick={() => setIsOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -135,7 +135,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <AnimatePresence>
           {isOpen && (
             <motion.div
