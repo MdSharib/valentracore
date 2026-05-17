@@ -99,7 +99,7 @@ export default function HeroDesktop() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen min-h-screen w-full bg-gradient-to-b from-[#5D656C] to-[#C0BFC8] overflow-hidden flex flex-col items-center justify-center">
+    <section ref={sectionRef} className="relative h-screen min-h-screen w-full bg-[#A8B0B8] overflow-hidden flex flex-col items-center justify-center">
       {/* Cinematic Glow Backing */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)] opacity-70 z-0" />
       
@@ -109,11 +109,8 @@ export default function HeroDesktop() {
           ref={canvasRef}
           width={1920}
           height={1080}
-          className="w-[150%] sm:w-[120%] md:w-full h-auto md:h-full max-w-none md:max-w-full object-contain md:object-cover"
+          className="w-[150%] sm:w-[120%] md:w-full h-auto md:h-full max-w-none md:max-w-full object-contain md:object-cover [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] md:[mask-image:none]"
         />
-        {/* Mobile Edge Fade Gradients to blend the letterbox effect smoothly */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#5D656C] via-[#5D656C]/80 to-transparent md:hidden pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#C0BFC8] via-[#C0BFC8]/80 to-transparent md:hidden pointer-events-none" />
       </div>
 
       <div className="hero-overlay opacity-0 absolute inset-0 bg-black/70 z-20 pointer-events-none" />
